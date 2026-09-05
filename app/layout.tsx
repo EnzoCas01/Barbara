@@ -29,26 +29,39 @@ export const metadata: Metadata = {
   ],
   icons: {
     icon: [
+      { url: '/icon-32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/icon-512.png', sizes: '512x512', type: 'image/png' },
+    ],
+    apple: '/icon-180.png',
+    shortcut: '/icon-32.png',
+  },
+  openGraph: {
+    title: 'A Reis Business | Marketing e presença digital para negócios locais em Araruama',
+    description:
+      'Gestão de redes sociais, consultoria de Instagram, criação de conteúdo e estratégia digital para negócios locais em Araruama e região.',
+    locale: 'pt_BR',
+    type: 'website',
+    images: [
       {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
+        url: '/images/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Bárbara Reis Business',
       },
     ],
-    apple: '/apple-icon.png',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'A Reis Business | Marketing e presença digital para negócios locais em Araruama',
+    description:
+      'Gestão de redes sociais, consultoria de Instagram, criação de conteúdo e estratégia digital para negócios locais em Araruama e região.',
+    images: ['/images/og-image.png'],
   },
 }
 
 export const viewport: Viewport = {
-  colorScheme: 'light',
-  themeColor: '#faf7f1',
+  colorScheme: 'dark',
+  themeColor: '#141414',
 }
 
 export default function RootLayout({

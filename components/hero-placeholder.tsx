@@ -31,18 +31,18 @@ export function HeroPlaceholder() {
       <div className="pointer-events-none absolute inset-x-0 bottom-0 hidden h-40 bg-gradient-to-b from-transparent to-[#060606] md:block" />
 
       {/* Texto */}
-      <div className="relative z-10 mx-auto flex max-w-7xl flex-col justify-center px-5 pb-16 pt-8 md:min-h-screen md:pt-24 lg:px-8">
+      <div className="relative z-10 mx-auto flex max-w-7xl flex-col justify-center px-5 pb-16 pt-4 md:min-h-screen md:pt-24 lg:px-8">
         <div className="max-w-xl">
-          <p className="mb-6 flex items-center gap-3 text-xs font-medium uppercase tracking-widest text-zinc-200">
+          <p className="mb-4 flex items-center gap-3 text-xs font-medium uppercase tracking-widest text-zinc-200 md:mb-6">
             <span className="h-px w-8 bg-white/70" />
             Social media e tráfego pago
           </p>
 
-          <h1 className="font-sans font-black uppercase leading-[0.9] tracking-tight">
-            <span className="block text-white" style={{ fontSize: "clamp(52px, 6.5vw, 96px)" }}>
+          <h1 className="break-words font-sans font-black uppercase leading-[0.95] tracking-tight md:leading-[0.9]">
+            <span className="block text-white" style={{ fontSize: "clamp(34px, 6.5vw, 96px)" }}>
               Presença&nbsp;&amp;
             </span>
-            <span className="block text-zinc-300" style={{ fontSize: "clamp(52px, 6.5vw, 96px)" }}>
+            <span className="block text-zinc-300" style={{ fontSize: "clamp(34px, 6.5vw, 96px)" }}>
               Performance
             </span>
           </h1>

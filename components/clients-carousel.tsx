@@ -5,27 +5,22 @@
  * - `logo`: caminho do logo em /public/images/clientes/
  */
 const CLIENTS: { name: string; logo: string }[] = [
-  { name: "Inova LEDS Iluminação", logo: "/images/clientes/inova-leds.jpeg" },
-  { name: "Pousada Araruama", logo: "/images/clientes/pousada-araruama.jpeg" },
-  { name: "Lagoa de Araruama", logo: "/images/clientes/lagoa-de-araruama.jpeg" },
-  { name: "OC", logo: "/images/clientes/oc.jpeg" },
-  { name: "Plicilia Muniz Espaço de Beleza", logo: "/images/clientes/plicilia-muniz.jpeg" },
+  { name: "Inova LEDS Iluminação", logo: "/images/clientes/inova-leds.png" },
+  { name: "Pousada Araruama", logo: "/images/clientes/pousada-araruama.png" },
+  { name: "Lagoa de Araruama", logo: "/images/clientes/lagoa-de-araruama.png" },
+  { name: "OC", logo: "/images/clientes/oc.png" },
+  { name: "Plicilia Muniz Espaço de Beleza", logo: "/images/clientes/plicilia-muniz.png" },
 ]
 
 function ClientItem({ client }: { client: { name: string; logo: string } }) {
   return (
-    <li className="flex w-48 shrink-0 flex-col items-center gap-4 px-6 md:w-56">
-      <div className="flex h-24 w-24 items-center justify-center overflow-hidden rounded-full bg-white/5 ring-1 ring-white/10 md:h-28 md:w-28">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={client.logo}
-          alt={client.name}
-          className="h-full w-full object-cover"
-        />
-      </div>
-      <span className="text-center text-xs font-medium uppercase tracking-widest text-zinc-400">
-        {client.name}
-      </span>
+    <li className="flex w-48 shrink-0 items-center justify-center px-6 md:w-56">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={client.logo}
+        alt={client.name}
+        className="h-24 w-24 object-contain opacity-90 md:h-28 md:w-28"
+      />
     </li>
   )
 }

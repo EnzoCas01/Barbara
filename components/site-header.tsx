@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react"
 import Image from "next/image"
 import { Menu, X } from "lucide-react"
-import { NAV_LINKS, whatsappLink } from "@/lib/site"
+import { NAV_LINKS } from "@/lib/site"
+import { PlanQuizButton } from "@/components/plan-quiz"
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false)
@@ -55,17 +56,12 @@ export function SiteHeader() {
 
         {/* CTA + mobile toggle */}
         <div className="flex items-center gap-3">
-          <a
-            href={whatsappLink("Olá, gostaria de montar meu plano!")}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden items-center gap-2 border border-white px-4 py-2 text-xs font-bold uppercase tracking-widest text-white transition-colors hover:bg-white hover:text-black sm:inline-flex"
-          >
+          <PlanQuizButton className="hidden items-center gap-2 border border-white px-4 py-2 text-xs font-bold uppercase tracking-widest text-white transition-colors hover:bg-white hover:text-black sm:inline-flex">
             Monte seu plano
             <svg width="10" height="10" viewBox="0 0 12 12" fill="none" aria-hidden="true">
               <path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
-          </a>
+          </PlanQuizButton>
           <button
             type="button"
             onClick={() => setOpen(!open)}
@@ -99,14 +95,12 @@ export function SiteHeader() {
               </li>
             ))}
             <li className="pt-3">
-              <a
-                href={whatsappLink("Olá, gostaria de montar meu plano!")}
-                target="_blank"
-                rel="noopener noreferrer"
+              <PlanQuizButton
+                onOpen={() => setOpen(false)}
                 className="inline-flex items-center gap-2 border border-white px-5 py-3 text-xs font-bold uppercase tracking-widest text-white"
               >
                 Monte seu plano ↗
-              </a>
+              </PlanQuizButton>
             </li>
           </ul>
         </nav>

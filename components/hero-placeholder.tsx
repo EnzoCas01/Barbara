@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { PlanQuizButton } from "@/components/plan-quiz"
 
 export function HeroPlaceholder() {
   return (
@@ -12,7 +13,7 @@ export function HeroPlaceholder() {
         src="/images/hero-bg.png"
         alt="Bárbara Reis"
         fill
-        className="object-cover object-center"
+        className="object-cover object-[78%_22%] md:object-center"
         priority
       />
 
@@ -56,12 +57,7 @@ export function HeroPlaceholder() {
                 <path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </a>
-            <a
-              href="#contato"
-              className="inline-flex items-center gap-2 border border-zinc-400 px-6 py-3.5 text-xs font-bold uppercase tracking-widest text-white transition-colors hover:border-white"
-            >
-              Monte seu plano
-            </a>
+            <PlanQuizButton />
           </div>
         </div>
       </div>

@@ -6,7 +6,7 @@
 
 import Image from "next/image"
 import { Sparkle } from "lucide-react"
-import { whatsappLink } from "@/lib/site"
+import { PlanQuizButton } from "@/components/plan-quiz"
 
 const PORTFOLIO = [
   {
@@ -24,16 +24,11 @@ const PORTFOLIO = [
     nome: "Lagoa de Araruama",
     categoria: "Social Media",
   },
-  {
-    img: "/images/portfolio/plicilia-muniz.png",
-    nome: "Plicilia Muniz Beleza",
-    categoria: "Criação de Conteúdo",
-  },
 ]
 
 export function PortfolioSection() {
   return (
-    <section id="portfolio" className="flex min-h-screen flex-col justify-center bg-[#0a0a0a] py-24">
+    <section id="portfolio" className="bg-[#0a0a0a] py-16 md:py-20">
       <div className="mx-auto w-full max-w-6xl px-5 lg:px-8">
         <p className="mb-4 text-xs font-medium uppercase tracking-widest text-zinc-500">Portfólio</p>
         <h2 className="mb-14 font-serif text-4xl font-semibold italic text-white md:text-5xl">
@@ -41,13 +36,12 @@ export function PortfolioSection() {
         </h2>
       </div>
 
-      {/* Carrossel com scroll horizontal */}
-      <div className="overflow-x-auto pb-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-        <ul className="flex gap-5 px-5 lg:px-8" style={{ width: "max-content" }}>
+      <div className="mx-auto w-full max-w-6xl px-5 lg:px-8">
+        <ul className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {PORTFOLIO.map((p) => (
             <li
               key={p.nome}
-              className="group relative h-[520px] w-[300px] shrink-0 overflow-hidden md:w-[340px]"
+              className="group relative h-[420px] w-full overflow-hidden sm:h-[460px] lg:h-[520px]"
             >
               <Image
                 src={p.img}
@@ -72,7 +66,7 @@ export function PortfolioSection() {
                   href="https://www.instagram.com/a.reisbusiness/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-4 inline-flex translate-y-2 items-center gap-2 border border-white px-5 py-2.5 text-xs font-bold uppercase tracking-widest text-white opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 hover:bg-white hover:text-black"
+                  className="mt-4 inline-flex items-center gap-2 border border-white px-5 py-2.5 text-xs font-bold uppercase tracking-widest text-white transition-all duration-300 hover:bg-white hover:text-black md:translate-y-2 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100"
                 >
                   Saiba mais
                   <svg width="10" height="10" viewBox="0 0 12 12" fill="none" aria-hidden="true">
@@ -99,7 +93,7 @@ export function ServicosSection() {
   ]
 
   return (
-    <section id="servicos" className="flex min-h-screen flex-col justify-center bg-[#080808] py-24">
+    <section id="servicos" className="bg-[#080808] py-16 md:py-20">
       <div className="mx-auto w-full max-w-6xl px-5 lg:px-8">
         <p className="mb-4 text-xs font-medium uppercase tracking-widest text-zinc-500">Serviços</p>
         <h2 className="mb-14 font-serif text-4xl font-semibold italic text-white md:text-5xl">
@@ -126,7 +120,7 @@ export function SobreMimSection() {
   ]
 
   return (
-    <section id="sobre" className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-[#0a0a0a] py-24">
+    <section id="sobre" className="relative overflow-hidden bg-[#0a0a0a] py-16 md:py-20">
       <div className="mx-auto w-full max-w-6xl px-5 lg:px-8">
         <div className="grid items-center gap-16 lg:grid-cols-2">
           {/* Texto na esquerda */}
@@ -158,17 +152,12 @@ export function SobreMimSection() {
                 realidade, o público e o momento de cada negócio.
               </p>
             </div>
-            <a
-              href={whatsappLink("Olá, gostaria de montar meu plano!")}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mb-10 inline-flex items-center gap-2 border border-white px-6 py-3.5 text-xs font-bold uppercase tracking-widest text-white transition-colors hover:bg-white hover:text-black"
-            >
+            <PlanQuizButton className="mb-10 inline-flex items-center gap-2 border border-white px-6 py-3.5 text-xs font-bold uppercase tracking-widest text-white transition-colors hover:bg-white hover:text-black">
               Monte seu plano
               <svg width="10" height="10" viewBox="0 0 12 12" fill="none" aria-hidden="true">
                 <path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-            </a>
+            </PlanQuizButton>
             <div className="grid grid-cols-1 gap-6 border-t border-zinc-800 pt-8 sm:grid-cols-3">
               {destaques.map((d, i) => (
                 <div key={d.titulo} className={`flex items-start gap-3 ${i > 0 ? "sm:border-l sm:border-zinc-800 sm:pl-6" : ""}`}>
@@ -218,7 +207,7 @@ export function AvaliacoesSection() {
   ]
 
   return (
-    <section id="avaliacoes" className="flex min-h-screen flex-col justify-center bg-[#080808] py-24">
+    <section id="avaliacoes" className="bg-[#080808] py-16 md:py-20">
       <div className="mx-auto w-full max-w-6xl px-5 lg:px-8">
         <p className="mb-4 text-xs font-medium uppercase tracking-widest text-zinc-500">Avaliações</p>
         <h2 className="mb-14 font-serif text-4xl font-semibold italic text-white md:text-5xl">

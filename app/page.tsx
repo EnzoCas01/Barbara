@@ -11,8 +11,8 @@ export default function Page() {
       <main>
         <HeroPlaceholder />
         <ClientsCarousel />
-        <PortfolioSection />
         <ServicosSection />
+        <PortfolioSection />
         <SobreMimSection />
         <AvaliacoesSection />
       </main>

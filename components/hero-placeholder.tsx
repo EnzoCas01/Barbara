@@ -3,30 +3,35 @@ import { PlanQuizButton } from "@/components/plan-quiz"
 
 export function HeroPlaceholder() {
   return (
-    <section
-      id="inicio"
-      className="relative w-full overflow-hidden bg-[#0a0e14]"
-      style={{ minHeight: "100vh" }}
-    >
-      {/* Imagem preenchendo a hero inteira */}
+    <section id="inicio" className="relative w-full overflow-hidden bg-[#0a0e14] md:min-h-screen">
+      {/* Mobile: foto num bloco no topo, com espaço próprio — título vem depois, embaixo */}
+      <div className="relative h-[52vh] min-h-[360px] max-h-[520px] w-full md:hidden">
+        <Image
+          src="/images/hero-bg.png"
+          alt="Bárbara Reis"
+          fill
+          className="object-cover object-[78%_18%]"
+          priority
+        />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-[#0a0e14]" />
+      </div>
+
+      {/* Desktop: imagem preenchendo a hero inteira, como fundo */}
       <Image
         src="/images/hero-bg.png"
         alt="Bárbara Reis"
         fill
-        className="object-cover object-[78%_22%] md:object-center"
+        className="hidden object-cover object-center md:block"
         priority
       />
 
-      {/* leve sombra só na esquerda pra dar leitura ao texto, sem escurecer a foto */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-transparent" />
-      {/* saída suave para a seção seguinte */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-[#060606]" />
+      {/* leve sombra só na esquerda pra dar leitura ao texto, sem escurecer a foto — só desktop */}
+      <div className="absolute inset-0 hidden bg-gradient-to-r from-black/60 via-transparent to-transparent md:block" />
+      {/* saída suave para a seção seguinte — só desktop */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 hidden h-40 bg-gradient-to-b from-transparent to-[#060606] md:block" />
 
-      {/* Texto na esquerda */}
-      <div
-        className="relative z-10 mx-auto flex max-w-7xl flex-col justify-center px-5 pb-16 pt-24 lg:px-8"
-        style={{ minHeight: "100vh" }}
-      >
+      {/* Texto */}
+      <div className="relative z-10 mx-auto flex max-w-7xl flex-col justify-center px-5 pb-16 pt-8 md:min-h-screen md:pt-24 lg:px-8">
         <div className="max-w-xl">
           <p className="mb-6 flex items-center gap-3 text-xs font-medium uppercase tracking-widest text-zinc-200">
             <span className="h-px w-8 bg-white/70" />

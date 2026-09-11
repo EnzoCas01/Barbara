@@ -98,16 +98,24 @@ function formatAnswer(question: Question, selected: string[], otherText: string)
     .join(", ")
 }
 
+const DIVIDER = "──────────────"
+
 function buildMessage(
   name: string,
   answers: Record<string, string[]>,
   otherTexts: Record<string, string>
 ) {
-  const lines = [`Olá! Fiz o quiz do site e quero um orçamento.`, ``, `Nome: ${name}`]
+  const lines = [
+    `Olá! Fiz o quiz do site e quero um orçamento. 👋`,
+    DIVIDER,
+    `*Nome:* ${name}`,
+    DIVIDER,
+  ]
   QUESTIONS.forEach((q, i) => {
     const chosen = formatAnswer(q, answers[q.id] || [], otherTexts[q.id] || "")
-    lines.push(``, `${i + 1}. ${q.title}`, chosen)
+    lines.push(`*${i + 1}. ${q.title}*`, chosen, ``)
   })
+  lines.push(DIVIDER, `Aguardo seu retorno para conversarmos sobre o orçamento. Obrigado(a)!`)
   return lines.join("\n")
 }
 
